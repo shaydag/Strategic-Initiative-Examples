@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Materials Distributor - Strategic Initiatives</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #004BEA 0%, #0038b3 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #000000;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #000000;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.7;
+        }
+
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .initiative-card {
+            background: #F2F2F2;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .initiative-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #004BEA;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .initiative-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .initiative-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 75, 234, 0.2);
+            border-color: #004BEA;
+        }
+
+        .initiative-card.expanded {
+            background: #FFFFFF;
+            box-shadow: 0 15px 35px rgba(0, 75, 234, 0.15);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+            background: #004BEA;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+
+        .card-description {
+            color: #000000;
+            opacity: 0.7;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .card-details.expanded {
+            max-height: 500px;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #000000;
+            opacity: 0.8;
+        }
+
+        .detail-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #004BEA;
+            font-weight: bold;
+        }
+
+        .expand-btn {
+            background: #004BEA;
+            color: #FFFFFF;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .expand-btn:hover {
+            background: #0038b3;
+            transform: scale(1.05);
+        }
+
+        /* Remove old color theme variables */
+
+        .legend {
+            background: #000000;
+            border-radius: 15px;
+            padding: 30px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .legend h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .legend p {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .initiatives-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Strategic Initiatives for Building Materials Distributors</h1>
+            <p>Key focus areas that drive competitive advantage and sustainable growth in the building materials distribution industry</p>
+        </div>
+
+        <div class="initiatives-grid">
+            <div class="initiative-card" onclick="toggleCard(this)">
+                <div class="card-icon">🚛</div>
+                <div class="card-title">Supply Chain Optimization</div>
+                <div class="card-description">
+                    Streamline procurement, inventory management, and logistics to reduce costs and improve service levels.
+                </div>
+                <button class="expand-btn">Learn More</button>
+                <div class="card-details">
+                    <ul class="detail-list">
+                        <li>Vendor relationship management and strategic sourcing</li>
+                        <li>Inventory optimization and demand forecasting</li>
+                        <li>Warehouse automation and efficiency improvements</li>
+                        <li>Transportation optimization and delivery scheduling</li>
+                        <li>Supply chain visibility and tracking systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="initiative-card" onclick="toggleCard(this)">
+                <div class="card-icon">💻</div>
+                <div class="card-title">Digital Transformation</div>
+                <div class="card-description">
+                    Leverage technology to modernize operations, improve customer experience, and enable data-driven decisions.
+                </div>
+                <button class="expand-btn">Learn More</button>
+                <div class="card-details">
+                    <ul class="detail-list">
+                        <li>E-commerce platform development and mobile apps</li>
+                        <li>ERP system upgrades and integration</li>
+                        <li>Customer relationship management (CRM) solutions</li>
+                        <li>Business intelligence and analytics platforms</li>
+                        <li>IoT and automated inventory tracking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="initiative-card" onclick="toggleCard(this)">
+                <div class="card-icon">🤝</div>
+                <div class="card-title">Customer Experience Enhancement</div>
+                <div class="card-description">
+                    Focus on delivering superior service and building stronger relationships with contractors and builders.
+                </div>
+                <button class="expand-btn">Learn More</button>
+                <div class="card-details">
+                    <ul class="detail-list">
+                        <li>Customer segmentation and personalized service</li>
+                        <li>Technical support and product expertise</li>
+                        <li>Training programs for customer teams</li>
+                        <li>Flexible payment terms and financing options</li>
+                        <li>24/7 customer support and emergency services</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="initiative-card" onclick="toggleCard(this)">
+                <div class="card-icon">⚙️</div>
+                <div class="card-title">Operational Excellence</div>
+                <div class="card-description">
+                    Optimize internal processes to improve efficiency, reduce waste, and enhance profitability.
+                </div>
+                <button class="expand-btn">Learn More</button>
+                <div class="card-details">
+                    <ul class="detail-list">
+                        <li>Lean manufacturing and process improvement</li>
+                        <li>Quality management systems</li>
+                        <li>Cost reduction and margin optimization</li>
+                        <li>Performance metrics and KPI tracking</li>
+                        <li>Employee training and development programs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="initiative-card" onclick="toggleCard(this)">
+                <div class="card-icon">📈</div>
+                <div class="card-title">Market Expansion</div>
+                <div class="card-description">
+                    Grow market share through geographic expansion, new product lines, and strategic partnerships.
+                </div>
+                <button class="expand-btn">Learn More</button>
+                <div class="card-details">
+                    <ul class="detail-list">
+                        <li>Geographic expansion into new markets</li>
+                        <li>Product line diversification and specialization</li>
+                        <li>Strategic acquisitions and partnerships</li>
+                        <li>Market research and competitive analysis</li>
+                        <li>Brand development and marketing initiatives</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="initiative-card" onclick="toggleCard(this)">
+                <div class="card-icon">🌱</div>
+                <div class="card-title">Sustainability & Compliance</div>
+                <div class="card-description">
+                    Implement sustainable practices and ensure compliance with evolving regulations and standards.
+                </div>
+                <button class="expand-btn">Learn More</button>
+                <div class="card-details">
+                    <ul class="detail-list">
+                        <li>Green building materials and eco-friendly products</li>
+                        <li>Energy-efficient warehouse and transportation</li>
+                        <li>Waste reduction and recycling programs</li>
+                        <li>Regulatory compliance and safety standards</li>
+                        <li>Sustainability reporting and certifications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <h3>Strategic Implementation</h3>
+            <p>Successful building materials distributors typically pursue multiple initiatives simultaneously, with priorities varying based on company size, market position, and competitive landscape. Click on each card above to explore specific implementation strategies.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleCard(card) {
+            const details = card.querySelector('.card-details');
+            const btn = card.querySelector('.expand-btn');
+            const isExpanded = details.classList.contains('expanded');
+            
+            if (isExpanded) {
+                details.classList.remove('expanded');
+                card.classList.remove('expanded');
+                btn.textContent = 'Learn More';
+            } else {
+                details.classList.add('expanded');
+                card.classList.add('expanded');
+                btn.textContent = 'Show Less';
+            }
+        }
+
+        // Add some smooth animations on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.initiative-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
